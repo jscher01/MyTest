@@ -15,17 +15,17 @@
 
   <div class="form-group">
     <label for="name">Full Name</label>
-    <input type="text" class="form-control" id="name" name="name">
+    <input type="text" class="form-control" id="name" name="name" required>
   </div>
 
   <div class="form-group">
     <label for="email">Email Address</label>
-    <input type="email" class="form-control" id="email" name="email">
+    <input type="email" class="form-control" id="email" name="email" required>
   </div>
 
   <div class="form-group">
     <label for="message">Message</label>
-    <textarea id="message" name="message" class="form-control"></textarea>
+    <textarea id="message" name="message" class="form-control" required></textarea>
     <!-- <p class="help-block">Example block-level help text here.</p> -->
   </div>
 
@@ -34,8 +34,14 @@
       <input type="checkbox"> Check me out
     </label>
   </div> -->
+  <div class="form-group">
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </div>
+
+  @include('layouts.errors')
+
 </form>
 
   </div>

@@ -30,6 +30,13 @@ class PostController extends Controller
     public function store()
     {
 
+
+      $this->validate(request(),[
+        'name' => 'required',
+        'email' => 'required',
+        'message' => 'required'
+      ]);
+
       //die and dump
        // dd(request()->all());
 
@@ -42,7 +49,6 @@ class PostController extends Controller
         //this next line may be better
         //\Mail::to($email)->send(new ContactUs);
 
-        //????????should add something that said it worked.
         return redirect('/');
     }
 }
