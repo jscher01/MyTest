@@ -14,7 +14,6 @@ class PostController extends Controller
     public function index()
     {
       return view('posts.index');
-      // return view('layouts.master');//this was my issue
     }
 
     public function show()
@@ -30,24 +29,17 @@ class PostController extends Controller
     public function store()
     {
 
-
       $this->validate(request(),[
         'name' => 'required',
         'email' => 'required',
         'message' => 'required'
       ]);
 
-      //die and dump
-       // dd(request()->all());
-
         // Create a new post using the request data
 
         Post::create(request(['name', 'email', 'message']));
 
         \Mail::to('jscher01@gmail.com')->send(new ContactUs);
-
-        //this next line may be better
-        //\Mail::to($email)->send(new ContactUs);
 
         return redirect('/');
     }
